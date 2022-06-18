@@ -4,7 +4,7 @@ open Dta
 
 def main : IO Unit := do
   let arr ← IO.FS.readBinFile "data/test.dta"
-  header
+  dta
   |>.parse arr
   |> repr
   |> IO.println
