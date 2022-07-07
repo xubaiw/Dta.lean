@@ -158,7 +158,7 @@ def observation (e : Byteorder) (k : typeK r) (ty : VariableType) : ByteArrayPar
 def data (e : Byteorder) (k : typeK r) (varTypes : VariableTypes) : ByteArrayParser Data := wrapped "data" do
   let mut obs := #[]
   for ty in varTypes do
-    obs := obs.push (←observation k ty)
+    obs := obs.push (←observation e k ty)
   return obs
 
 def dta : ByteArrayParser Dta := do
